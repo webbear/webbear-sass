@@ -1,0 +1,34 @@
+@mixin container() {
+  max-width: $container-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $base-gutter / 2;
+  padding-left: $base-gutter / 2;
+}
+
+@mixin flex-row() {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: - $base-gutter / 2;
+  margin-right: - $base-gutter / 2;
+}
+
+
+@mixin flex-item() {
+  padding-right: $base-gutter / 2;
+  padding-left: $base-gutter / 2;
+  flex: 0 1 auto;
+}
+
+@mixin flex-gallery-item() {
+  padding: $base-gutter / 2;
+  flex: 0 0 auto;
+}
+
+@mixin flex-column($value, $columns: $grid-columns) {
+  @if ($value == $columns) {
+    width: 100%;
+  } @elseif($value <= $columns) {
+    width: (100% / $grid-columns) * $value;
+  }
+}

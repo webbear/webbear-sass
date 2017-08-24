@@ -1,0 +1,18 @@
+/////////////////////////////////////////////////////
+/// mobile first
+/////////////////////////////////////////////////////
+@mixin media($width) {
+   @if map-has-key($breakpoints, $width) {
+    @media (min-width: map-get($breakpoints, $width)) {
+      @content;
+    }
+  }
+}
+
+@mixin media-down($width) {
+   @if map-has-key($breakpoints, $width) {
+    @media (max-width: map-get($breakpoints, $width)) {
+      @content;
+    }
+  }
+}

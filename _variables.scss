@@ -1,0 +1,19 @@
+/////////////////////////////////////////////////////
+/// overrwrite them with your custom vars
+/////////////////////////////////////////////////////
+
+
+// layout /grid
+$base-gutter: 36px !default;
+$container-max-width: 1200px !default;
+$grid-columns: 12 !default;
+
+
+
+$breakpoints: (
+  x-small: 0,
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  x-large: 1200px
+);
