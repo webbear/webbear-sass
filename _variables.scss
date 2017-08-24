@@ -4,10 +4,9 @@
 
 
 // layout /grid
-$base-gutter: 36px !default;
-$container-max-width: 1200px !default;
+$grid-gutter: 24px !default;
 $grid-columns: 12 !default;
-
+$container-max-width: 1140px !default;
 
 
 $breakpoints: (
@@ -17,3 +16,67 @@ $breakpoints: (
   large: 992px,
   x-large: 1200px
 );
+
+/////////////////////////////////////////////////////
+/// colors
+/////////////////////////////////////////////////////
+$white:  #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:  #000 !default;
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$primary-color: $green !default;
+$secondary-color: $blue !default;
+
+$brand-primary: $primary-color !default;
+$brand-secondary: $secondary-color !default;
+
+$link-color: $brand-primary !default;
+$link-text-decoration: none !default;
+$link-hover-color: $link-color !default;
+$link-hover-text-decoration: underline !default;
+$link-visited-color: darken($brand-primary, 10%);
+
+
+// fonts
+$font-family-base: "Helvetica", arial, sans-serif !default;
+$font-size-base: 100% !default;
+$font-weight-base: 400 !default;
+$line-height-base: 1.5 !default;
+$body-color: $gray-900 !default;
+$body-bg: $white !default;
+
+
+$dt-font-weight: 700;
+
+
+$button-settings: (
+  background: $primary-color,
+  border: 1px solid $primary-color,
+  color: #fff,
+  border-radius: 0,
+  font-size: 1rem,
+  font-weight: 400,
+  font-family: $font-family-base,
+  padding: .5rem .75rem,
+  hover-background: darken($primary-color, 10%),
+  appeareance: none
+) !default;
