@@ -2,10 +2,10 @@
 
 @import "custom-variables";
 
-@import "./components/functions";
-@import "./components/media-queries";
-@import "./components/flex-grid";
-@import "./components/utilities";
+@import "./tools/functions";
+@import "./tools/media-queries";
+@import "./tools/flex-grid";
+@import "./tools/utilities";
 @if ($reboot == true) {
   @import "./components/reboot";
 }
