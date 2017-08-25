@@ -1,9 +1,10 @@
-@mixin container() {
-  max-width: $container-width;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $grid-gutter;
-  padding-left: $grid-gutter;
+@mixin container( $max-width: $container-max-width, 
+                  $padding: 0 $grid-gutter, 
+                  $margin: 0 auto 
+                  ) {
+  max-width: $max-width;
+  margin: $margin;
+  padding: $padding;
 }
 
 @mixin flex-row() {

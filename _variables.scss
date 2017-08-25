@@ -67,6 +67,7 @@ $body-bg: $white !default;
 
 $dt-font-weight: 700;
 
+$reboot: true !default;
 
 $button-settings: (
   background: $primary-color,
@@ -79,4 +80,33 @@ $button-settings: (
   padding: .5rem .75rem,
   hover-background: darken($primary-color, 10%),
   appeareance: none
+) !default;
+
+
+$font-icons: (
+  burger: "\2630",
+  menu: "\2630",
+  close: "\2715",
+  plus: "\002B",
+  mod-plus: "\02D6",
+  minus: "\002D",
+  mod-minus: "\02D7",
+  caret: "\02C7",
+  less: "\003C",
+  more: "\003E",
+  apo-left: "\00AB",
+  apo-right: "\00BB",
+  copyright: "\00A9"
+) !default;
+
+$fa-icons: (
+  file: "\f15b",
+  pdf: "\f1c1",
+  word: "\f1c2",
+  excel: "\f1c3",
+  powerpoint: "\f1c4",
+  image: "\f1c5",
+  zip: "\f1c6",
+  audio: "\f1c7",
+  movie: "\f1c8"  
 ) !default;

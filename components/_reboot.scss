@@ -482,3 +482,17 @@ template {
 [hidden] {
   display: none !important;
 }
+nav {
+  ul,ol,li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+}
+.nav,
+.nav li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

@@ -1,7 +1,14 @@
 @import "variables";
-@import "functions";
-@import "reboot";
 
-@import "media-queries";
-@import "flex-grid";
-@import "utilities";
+// @import "custom-variables";
+
+@import "./components/functions";
+@import "./components/media-queries";
+@import "./components/flex-grid";
+@import "./components/utilities";
+@if ($reboot == true) {
+  @import "./components/reboot";
+}
+
+
+

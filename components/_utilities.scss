@@ -20,6 +20,27 @@
   width: 1px;
 }
 
+@mixin fa-base($font-size: 14px) {
+  display: inline-block;
+  font: normal normal normal $font-size/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin icon($icon) {
+  @if (map-has-key($font-icons, $icon)) {
+    content: map-get($font-icons, $icon);
+  }
+}
+
+@mixin icon($icon) {
+  @if (map-has-key($font-icons)) {
+    content: map-get($font-icons);
+  }
+}
+
 @mixin print-link($color:#999,$size:10pt){
 	content: "  ["attr(href)"] ";
 	color: $color;
