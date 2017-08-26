@@ -32,6 +32,19 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:  #000 !default;
 
+// retrieve via grayscale() function
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+) !default;
+
 $blue:    #007bff !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
@@ -43,8 +56,38 @@ $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
+
+// retrieve via color()
+$colors: (
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: $gray-600,
+  gray-dark: $gray-800
+) !default;
+
+// retrieve via brand-color()
+$brand-colors: (
+  primary: $green,
+  secondary: $gray-600,
+  success: $blue,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $gray-100,
+  dark: $gray-800
+) !default;
+
 $primary-color: $green !default;
-$secondary-color: $blue !default;
+$secondary-color: $gray-600 !default;
 
 $brand-primary: $primary-color !default;
 $brand-secondary: $secondary-color !default;
@@ -65,11 +108,25 @@ $body-color: $gray-900 !default;
 $body-bg: $white !default;
 
 //font sizes
-$h1-font-size: 2rem;
+$h1-font-size: 2rem !default;
+$h2-font-size: 2rem !default;
+$h3-font-size: 1.75rem !default;
+$h4-font-size: 1.5rem !default;
+$h5-font-size: 1.25rem !default;
+$h6-font-size: 1rem !default;
 
+$headings-font-family: inherit !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.1 !default;
+
+// font colors
+$headings-color: inherit !default;
 
 //margins
-$h1-margins: 0 0 .75rem 0;
+$headings-margin-bottom: .75rem ;
+
+
+
 
 $dt-font-weight: 700;
 

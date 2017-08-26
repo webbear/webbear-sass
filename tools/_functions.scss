@@ -57,3 +57,16 @@
 @function span($value: 1, $columns: $grid-columns) {
   @return flex-column-width($value,$columns);
 }
+
+// retreive color Sass maps
+@function color($key: "greem") {
+  @return map-get($colors, $key);
+}
+
+@function brand-color($key: "primary") {
+  @return map-get($brand-colors, $key);
+}
+
+@function grayscale($key: "100") {
+  @return map-get($grays, $key);
+}
