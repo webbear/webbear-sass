@@ -49,21 +49,22 @@
 }
 
 @mixin w-button() {
-  appearance: none;
-  background-color: map-get($buttons-setting, background);
-  border: map-get($buttons-setting, border);
-  border-radius: map-get($buttons-setting, border-radius);
-  color: map-get($buttons-setting, color);
+  
+  background-color: map-get($button-settings, background);
+  border: map-get($button-settings, border);
+  border-radius: map-get($button-settings, border-radius);
+  color: map-get($button-settings, color);
   cursor: pointer;
   display: inline-block;
-  font-family: map-get($buttons-setting, font-family);
-  font-size: map-get($buttons-setting, font-size);
+  font-family: map-get($button-settings, font-family);
+  font-size: map-get($button-settings, font-size);
   -webkit-font-smoothing: antialiased;
-  font-weight: map-get($buttons-setting, font-weight);
+  font-weight: map-get($button-settings, font-weight);
   line-height: 1;
-  padding: map-get($buttons-setting, padding);
+  padding: map-get($button-settings, padding);
   text-align: center;
   text-decoration: none;
+  appearance: map-get($button-settings, appearance);
   transition: background-color 200ms ease;
   user-select: none;
   vertical-align: middle;
@@ -71,7 +72,7 @@
 
   &:hover,
   &:focus {
-    background-color: map-get($buttons-setting, hover-background);
+    background-color: map-get($button-settings, hover-background);
     color: #fff;
   }
 
@@ -82,5 +83,24 @@
     &:hover {
       background-color: $primary-color;
     }
+  }
+}
+
+@mixin w-text-input() {
+  font-family: input('font-family');
+  font-size: input('font-size');
+  font-weight: input('font-weight');
+  line-height: input('line-hight');
+  padding: input('padding');
+  background: input("background");
+  border: input("border");
+  border-radius: input("border-radius");
+  display: input("display");
+  width: input('width');
+  max-width: input('max-width');
+  appearance: input('appearance');
+  
+  &:focus {
+    border-color: input('focus-border-color');
   }
 }

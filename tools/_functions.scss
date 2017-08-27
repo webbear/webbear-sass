@@ -75,3 +75,8 @@
 @function breakpoint($key: "x-small") {
   @return map-get($breakpoints, $key);
 }
+
+// retrieve input sass map
+@function input($key: "background") {
+  @return map-get($text-input-settings, $key);
+}

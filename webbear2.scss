@@ -7,9 +7,15 @@
 @import "./tools/media-queries";
 @import "./tools/flex-grid";
 @import "./tools/utilities";
-@if ($reboot == true) {
-  @import "./components/reboot";
-}
+
+
+// components
+
+@import "./components/reboot";
+@import "./components/commons";
+@import "./components/forms";
+
+
 
 
 

@@ -109,11 +109,11 @@ $body-bg: $white !default;
 
 //font sizes
 $h1-font-size: 2rem !default;
-$h2-font-size: 2rem !default;
-$h3-font-size: 1.75rem !default;
-$h4-font-size: 1.5rem !default;
+$h2-font-size: 1.8rem !default;
+$h3-font-size: 1.65rem !default;
+$h4-font-size: 1.4rem !default;
 $h5-font-size: 1.25rem !default;
-$h6-font-size: 1rem !default;
+$h6-font-size: 1.1rem !default;
 
 $headings-font-family: inherit !default;
 $headings-font-weight: 500 !default;
@@ -130,7 +130,7 @@ $headings-margin-bottom: .75rem ;
 
 $dt-font-weight: 700;
 
-$reboot: true !default;
+
 
 $button-settings: (
   background: $primary-color,
@@ -145,6 +145,21 @@ $button-settings: (
   appeareance: none
 ) !default;
 
+$text-input-settings: (
+  background: transparent,
+  border: 1px solid $gray-400,
+  border-radius: 0,
+  font-size: 1rem,
+  font-weight: 400,
+  font-family: $font-family-base,
+  line-height: 1.2,
+  padding: .25rem .5rem,
+  display: block,
+  focus-border-color: $primary-color,
+  apperance: none,
+  max-width: 100%,
+  width: 100%
+) !default;
 
 $font-icons: (
   burger: "\2630",

@@ -1,0 +1,14 @@
+[type=text],
+[type=email],
+[type=date],
+[type=number],
+textarea {
+  @include w-text-input();
+}
+
+
+button,
+[type=button],
+[type=submit] {
+  @include w-button;
+}
