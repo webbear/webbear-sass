@@ -58,7 +58,7 @@
   @return flex-column-width($value,$columns);
 }
 
-// retreive color Sass maps
+// retreive color sass maps
 @function color($key: "greem") {
   @return map-get($colors, $key);
 }
@@ -69,4 +69,9 @@
 
 @function grayscale($key: "100") {
   @return map-get($grays, $key);
+}
+
+// retrieve breakpoint sass map
+@function breakpoint($key: "x-small") {
+  @return map-get($breakpoints, $key);
 }

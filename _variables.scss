@@ -96,7 +96,7 @@ $link-color: $brand-primary !default;
 $link-text-decoration: none !default;
 $link-hover-color: $link-color !default;
 $link-hover-text-decoration: underline !default;
-$link-visited-color: darken($brand-primary, 10%);
+$link-visited-color: darken($brand-primary, 10%) !default;
 
 
 // fonts
