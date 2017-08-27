@@ -201,7 +201,7 @@ th {
 
 label {
   display: inline-block;
-  margin-bottom: .5rem;
+  margin-bottom: 0.25rem;
 }
 
 button:focus {
@@ -410,6 +410,7 @@ textarea {
   font-size: 1rem;
   font-weight: 400;
   padding: 0.25rem 0.5rem;
+  margin: 0 0 0.75rem 0;
   background: transparent;
   border: 1px solid #ced4da;
   border-radius: 0;
@@ -473,4 +474,27 @@ button:disabled:hover,
 [type=button]:disabled:hover,
 [type=submit]:disabled:hover {
   background-color: #28a745;
+}
+
+select {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.75rem;
+  margin: 0 0 0.75rem 0;
+  border: 1px solid #ced4da;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: normal;
+  color: #000;
+  background-color: #fff;
+  border-radius: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28138, 138, 138%29'></polygon></svg>");
+  background-size: 9px 6px;
+  background-position: right 0.5rem center;
+  background-origin: content-box;
+  background-repeat: no-repeat;
 }
