@@ -7,18 +7,18 @@
   padding: $padding;
 }
 
-@mixin flex-row() {
+@mixin flex-parent($flex-flow: row wrap) {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: $flex-flow;
   margin-left: - $grid-gutter / 2;
   margin-right: - $grid-gutter / 2;
 }
 
 
-@mixin flex-item() {
+@mixin flex-item($flex: 0 1 auto) {
   padding-right: $grid-gutter / 2;
   padding-left: $grid-gutter / 2;
-  flex: 0 1 auto;
+  flex: $flex;
 }
 
 @mixin flex-gallery-parent() {
