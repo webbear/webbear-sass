@@ -8,6 +8,7 @@ body {
   line-height: $line-height-base;
   color: $body-color;
   background-color: $body-bg;
+  text-size-adjust: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -65,4 +66,9 @@ ul,
 ol {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+img {
+	max-width: 100%;
+	height: auto
 }
