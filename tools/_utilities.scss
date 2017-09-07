@@ -36,7 +36,6 @@
 }
 
 
-
 @mixin print-link($color:#999,$size:10pt){
 	content: "  ["attr(href)"] ";
 	color: $color;
@@ -99,7 +98,6 @@
   
   &:focus {
     border-color: input('focus-border-color');
-    outline: input('outline');
   }
 }
 
