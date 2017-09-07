@@ -141,7 +141,7 @@ $button-settings: (
   border-radius: 0,
   font-size: 1rem,
   font-weight: 400,
-  font-family: $font-family-base,
+  font-family: inherit,
   padding: .5rem .75rem,
   hover-background: darken($primary-color, 10%),
   appeareance: none
@@ -161,7 +161,8 @@ $text-input-settings: (
   focus-border-color: $primary-color,
   apperance: none,
   max-width: 100%,
-  width: 100%
+  width: 100%,
+  outline: 1px solid $primary-color
 ) !default;
 
 
@@ -183,7 +184,8 @@ $select-settings: (
   background-size: 9px 6px,
   background-position: right .5rem center,
   background-origin: content-box,
-  background-repeat: no-repeat
+  background-repeat: no-repeat,
+  outline: 1px solid $primary-color
   
 ) !default;
 

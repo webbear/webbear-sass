@@ -35,11 +35,7 @@
   }
 }
 
-@mixin icon($icon) {
-  @if (map-has-key($font-icons)) {
-    content: map-get($font-icons);
-  }
-}
+
 
 @mixin print-link($color:#999,$size:10pt){
 	content: "  ["attr(href)"] ";
@@ -103,6 +99,7 @@
   
   &:focus {
     border-color: input('focus-border-color');
+    outline: input('outline');
   }
 }
 

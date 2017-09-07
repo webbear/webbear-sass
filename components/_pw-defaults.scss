@@ -38,6 +38,10 @@
 #wrap_Inputfield- {
 	display: none;
 }
+.FormBuilder, 
+.InputfieldForm {
+  font-family: inherit;
+}
 
 .InputfieldStateRequired {
   label:after {
