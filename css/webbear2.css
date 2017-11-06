@@ -446,7 +446,7 @@ button,
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Helvetica", arial, sans-serif;
+  font-family: inherit;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
