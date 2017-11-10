@@ -1,17 +1,23 @@
-@mixin container( $max-width: $container-max-width, 
-                  $padding: 0 $grid-gutter, 
-                  $margin: 0 auto 
+@mixin container( $max-width: $container-max-width,
+                  $padding: 0 $grid-gutter,
+                  $margin: 0 auto
                   ) {
   max-width: $max-width;
   margin: $margin;
   padding: $padding;
 }
 
-@mixin flex-parent($flex-flow: row wrap) {
+@mixin container-fluid ($padding: 0 $grid-gutter) {
+  padding: $padding;
+  clear: both;
+}
+
+// prepare for flexbox
+@mixin flex-parent($margin: 0 (- $grid-gutter / 2), $flex-flow: row wrap) {
   display: flex;
   flex-flow: $flex-flow;
-  margin-left: - $grid-gutter / 2;
-  margin-right: - $grid-gutter / 2;
+  margin:$margin;
+
 }
 
 
@@ -33,7 +39,7 @@
   flex: 0 0 auto;
 }
 
-@mixin flex-column-width($value, $columns: $grid-columns) {
+@mixin flex-item-width($value, $columns: $grid-columns) {
   @if ($value == $columns) {
     width: 100%;
   } @elseif($value <= $columns) {
