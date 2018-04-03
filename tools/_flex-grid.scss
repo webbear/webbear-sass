@@ -7,7 +7,9 @@
   padding: $padding;
 }
 
-@mixin container-fluid ($padding: 0 $grid-gutter) {
+
+@mixin container-fluid ($padding: 0 $grid-gutter, $margin: 0 auto) {
+  margin: $margin;
   padding: $padding;
   clear: both;
 }
@@ -19,7 +21,6 @@
   margin:$margin;
 
 }
-
 
 @mixin flex-item($flex: 0 1 auto) {
   padding-right: $grid-gutter / 2;
@@ -45,4 +46,40 @@
   } @elseif($value <= $columns) {
     width: (100% / $grid-columns) * $value;
   }
+}
+
+// new mixin naming
+@mixin columns($margin: 0 (- $grid-gutter / 2), $flex-flow: row wrap ) {
+  display: flex;
+  flex-flow: $flex-flow;
+  margin:$margin;
+}
+
+@mixin column($col, $columns: $grid-columns) {
+  @if ($col == $columns) {
+    $width: 100%;
+  } @elseif($col <= $columns) {
+    $width: percentage($col / $columns);
+  }
+  padding-right: $grid-gutter / 2;
+  padding-left: $grid-gutter / 2;
+  flex: 0 0 $width;
+  max-width: $width;
+}
+
+@mixin gallery($margin: 0 (- $grid-gutter / 4)) {
+  display: flex;
+  flex-flow: row wrap;
+  margin: $margin;
+}
+
+@mixin gallery-column($col, $padding: $grid-gutter/4, $columns: $grid-columns) {
+  @if ($col == $columns) {
+    $width: 100%;
+  } @elseif($col <= $columns) {
+    $width: percentage($col / $columns);
+  }
+  padding: $padding;
+  flex: 0 0 $width;
+  max-width: $width;
 }

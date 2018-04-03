@@ -412,12 +412,14 @@ img {
 
 [type=text],
 [type=email],
+[type=password],
 [type=date],
 [type=number],
 textarea {
   font-family: "Helvetica", arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
+  color: inherit;
   padding: 0.25rem 0.5rem;
   margin: 0 0 0.75rem 0;
   background: transparent;
@@ -430,6 +432,7 @@ textarea {
 
 [type=text]:focus,
 [type=email]:focus,
+[type=password]:focus,
 [type=date]:focus,
 [type=number]:focus,
 textarea:focus {
@@ -441,7 +444,7 @@ button,
 [type=button],
 [type=submit] {
   background-color: #28a745;
-  border: 1px solid #28a745;
+  border: 0 none;
   border-radius: 0;
   color: #fff;
   cursor: pointer;
@@ -472,7 +475,6 @@ button:focus,
 [type=submit]:hover,
 [type=submit]:focus {
   background-color: #1e7e34;
-  color: #fff;
 }
 
 a.button:disabled,

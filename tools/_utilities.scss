@@ -9,11 +9,11 @@
   }
 }
 
-@mixin visuallyhidden() { 
-  border: 0; 
-  clip: rect(0 0 0 0); 
-  height: 1px; 
-  margin: -1px; 
+@mixin visuallyhidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
   overflow: hidden;
   padding: 0;
   position: absolute;
@@ -35,6 +35,43 @@
   }
 }
 
+@mixin bg-color($bg) {
+  $val: $bg;
+  @if map-has-key($brand-colors, $bg) {
+    $val: brand-color($bg)
+  }
+  background-color: $val;
+}
+@mixin hover-bg-color($bg) {
+  $val: $bg;
+  @if map-has-key($brand-colors, $bg) {
+    $val: brand-color($bg)
+  }
+  &:hover,
+  &:focus {
+    background-color: $val;
+  }
+}
+
+@mixin color($c) {
+  $val: $c;
+  @if map-has-color($brand-colors, $c) {
+    $val: brand-color($c);
+  }
+  color: $val;
+}
+
+@mixin hover-color($c) {
+  $val: $c;
+  @if map-has-color($brand-colors, $c) {
+    $val: brand-color($c);
+  }
+
+  &:hover,
+  &:focus {
+    color: $val;
+  }
+}
 
 @mixin print-link($color:#999,$size:10pt){
 	content: "  ["attr(href)"] ";
@@ -43,12 +80,17 @@
 	text-decoration: none;
 }
 
-@mixin w-button() {
-  
-  background-color: map-get($button-settings, background);
-  border: map-get($button-settings, border);
+
+
+
+
+
+@mixin w-button($background-color: $button-bg-color, $color: $button-color, $border: $button-border, $background-color-hover: $button-bg-color-hover, $color-hover: $button-color-hover, $border-color-hover: $button-border-color-hover) {
+
+  background-color: $background-color;
+  border: $border;
   border-radius: map-get($button-settings, border-radius);
-  color: map-get($button-settings, color);
+  color: $color;
   cursor: pointer;
   display: inline-block;
   font-family: map-get($button-settings, font-family);
@@ -60,15 +102,16 @@
   text-align: center;
   text-decoration: none;
   appearance: map-get($button-settings, appearance);
-  transition: background-color 200ms ease;
+  transition: all 200ms ease;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  
+
   &:hover,
   &:focus {
-    background-color: map-get($button-settings, hover-background);
-    color: #fff;
+    background-color: $background-color-hover;
+    color: $color-hover;
+    border-color: $border-color-hover;
   }
 
   &:disabled {
@@ -81,10 +124,23 @@
   }
 }
 
+@mixin w-button-default() {
+  @include w-button(transparent, $secondary-color, 1px solid $secondary-color, transparent, $black, $black);
+}
+
+@mixin w-button-primary() {
+  @include w-button();
+}
+
+@mixin w-button-secondary() {
+  @include w-button($secondary-color, $white, 1px solid $secondary-color, darken($secondary-color, 10%), $white, darken($secondary-color, 10%));
+}
+
 @mixin w-text-input() {
   font-family: input('font-family');
   font-size: input('font-size');
   font-weight: input('font-weight');
+  color: input('color');
   line-height: input('line-hight');
   padding: input('padding');
   margin: input('margin');
@@ -95,7 +151,7 @@
   width: input('width');
   max-width: input('max-width');
   appearance: input('appearance');
-  
+
   &:focus {
     border-color: input('focus-border-color');
   }
@@ -119,5 +175,5 @@
   background-size: map-get($select-settings, background-size);
   background-position: map-get($select-settings, background-position);
   background-origin: map-get($select-settings, background-origin);
-  background-repeat: map-get($select-settings, background-repeat); 
+  background-repeat: map-get($select-settings, background-repeat);
 }

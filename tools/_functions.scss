@@ -39,10 +39,10 @@
       @return $grid-gutter * $val;
     } @else {
       @return $grid-gutter + $val;
-    } 
+    }
   } @elseif (type-of($val) == string) {
     @return calc(#{$grid-gutter} #{unquote($val)});
-  } 
+  }
 }
 
 @function flex-column-width($value: 1, $columns: $grid-columns) {
@@ -59,7 +59,7 @@
 }
 
 // retreive color sass maps
-@function color($key: "greem") {
+@function color($key: "green") {
   @return map-get($colors, $key);
 }
 
