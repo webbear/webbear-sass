@@ -40,13 +40,14 @@
   flex: 0 0 auto;
 }
 
-@mixin flex-item-width($value, $columns: $grid-columns) {
-  @if ($value == $columns) {
+@mixin flex-item-width($value: $grid-columns, $columns: $grid-columns) {
+  @if($value <= $columns) {
+    width: percentage($value / $columns);
+  } @else {
     width: 100%;
-  } @elseif($value <= $columns) {
-    width: (100% / $grid-columns) * $value;
   }
 }
+
 
 // new mixin naming
 @mixin columns($margin: 0 (- $grid-gutter / 2), $flex-flow: row wrap ) {
@@ -55,10 +56,9 @@
   margin:$margin;
 }
 
-@mixin column($col, $columns: $grid-columns) {
-  @if ($col == $columns) {
-    $width: 100%;
-  } @elseif($col <= $columns) {
+@mixin column($col: $grid-columns, $columns: $grid-columns) {
+  $width: 100%;
+  @if($col <= $columns) {
     $width: percentage($col / $columns);
   }
   padding-right: $grid-gutter / 2;
@@ -73,10 +73,9 @@
   margin: $margin;
 }
 
-@mixin gallery-column($col, $padding: $grid-gutter/4, $columns: $grid-columns) {
-  @if ($col == $columns) {
-    $width: 100%;
-  } @elseif($col <= $columns) {
+@mixin gallery-column($col: $grid-columns, $padding: $grid-gutter/4, $columns: $grid-columns) {
+  $width: 100%;
+  @if($col <= $columns) {
     $width: percentage($col / $columns);
   }
   padding: $padding;

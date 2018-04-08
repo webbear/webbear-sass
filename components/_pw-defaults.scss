@@ -1,34 +1,35 @@
+@if $processwire-defaults {
 /* images placed in richt text editor */
 
 .align_left,
 .align_right,
 .align_center {
-	display: block;
-	float: none;
-	margin: 1rem auto;
-	max-width: 100%;
+  display: block;
+  float: none;
+  margin: 1rem auto;
+  max-width: 100%;
 }
 
 .align_left {
   @include media(medium) {
-  	float: left;
-  	margin: 0 1rem 0.5rem 0;
+    float: left;
+    margin: 0 1rem 0.5rem 0;
     max-width: 50%;
-  }	
+  }
 }
 
 .align_right {
   @include media(medium) {
     float: right;
-  	margin: 0 0 0.5rem 1rem;
-  	max-width: 50%;
-  }  
+    margin: 0 0 0.5rem 1rem;
+    max-width: 50%;
+  }
 }
 
 .align_center {
   @include media(medium) {
-  	display: block;
-  	margin: 1em auto;
+    display: block;
+    margin: 1em auto;
   }
 }
 
@@ -36,9 +37,9 @@
 /* pw FormBuilder */
 // honeypot field
 #wrap_Inputfield- {
-	display: none;
+  display: none;
 }
-.FormBuilder, 
+.FormBuilder,
 .InputfieldForm {
   font-family: inherit;
 }
@@ -73,10 +74,11 @@ span.ui-state-error {
 
 .InputfieldStateError,
 .error {
-	color: brand-color(danger);
-	input[type=text],
-	input[type=email],
-	textarea {
-		border-color: brand-color(danger);
-	}
+  color: brand-color(danger);
+  input[type=text],
+  input[type=email],
+  textarea {
+    border-color: brand-color(danger);
+  }
+}
 }
