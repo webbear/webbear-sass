@@ -20,6 +20,14 @@
   width: 1px;
 }
 
+@mixin visually-hidden() {
+  @include visuallyhidden();
+}
+
+@mixin sr-only() {
+  @include visuallyhidden();
+}
+
 @mixin fa-base($font-size: 14px) {
   display: inline-block;
   font: normal normal normal $font-size/1 FontAwesome;
@@ -85,7 +93,7 @@
 
 
 
-@mixin w-button($background-color: $button-bg-color, $color: $button-color, $border: $button-border, $background-color-hover: $button-bg-color-hover, $color-hover: $button-color-hover, $border-color-hover: $button-border-color-hover) {
+@mixin w-button($background-color: map-get($button-settings, background), $color: map-get($button-settings, color), $border: map-get($button-settings,button-border), $background-color-hover: map-get($button-settings, hover-background), $color-hover: map-get($button-settings, hover-color), $border-color-hover: map-get($button-settings, hover-border-color)) {
 
   background-color: $background-color;
   border: $border;
@@ -106,6 +114,7 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  transition: map-get($button-settings, transition);
 
   &:hover,
   &:focus {

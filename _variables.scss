@@ -135,12 +135,6 @@ $dt-font-weight: 700;
 $label-margin-bottom: .25rem;
 
 // forms
-$button-bg-color: $primary-color !default;
-$button-color: $white !default;
-$button-border: 1px solid $primary-color !default;
-$button-bg-color-hover: darken($button-bg-color, 10%) !default;
-$button-color-hover: $button-color !default;
-$button-border-color-hover: $button-bg-color-hover !default;
 
 $input-bg-color: transparent !default;
 $input-border: 1px solid $gray-400 !default;
@@ -150,12 +144,18 @@ $input-margin: 0 0 .75rem 0 !default;
 
 
 $button-settings: (
+  background: $primary-color,
+  border: 1px solid $primary-color,
+  color: #fff,
   border-radius: 0,
-  font-size: 1rem,
+  font-size: .9rem,
   font-weight: 400,
   font-family: inherit,
   padding: .5rem .75rem,
-  appeareance: none
+  hover-background: darken($primary-color, 8%),
+  hover-color: $white,
+  hover-border-color: darken($primary-color, 8%),
+  transition: all 300ms ease
 ) !default;
 
 $text-input-settings: (

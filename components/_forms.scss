@@ -1,7 +1,7 @@
 [type=text],
 [type=email],
-[type=password],
 [type=date],
+[type=password],
 [type=number],
 textarea {
   @include w-text-input();
