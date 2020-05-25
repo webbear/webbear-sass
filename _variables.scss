@@ -7,6 +7,8 @@
 $grid-gutter: 32px !default;
 $grid-columns: 12 !default;
 $container-max-width: 1152px !default;
+$gallery-gutter: $grid-gutter/8 !default;
+$body-margin: 0 !default;
 
 
 $breakpoints: (
@@ -123,16 +125,16 @@ $headings-line-height: 1.1 !default;
 $headings-color: inherit !default;
 
 //margins
-$headings-margin-bottom: .75rem ;
+$headings-margin-bottom: .75rem !default;
 
 
 
 
-$dt-font-weight: 700;
+$dt-font-weight: 700 !default;
 
 
 
-$label-margin-bottom: .25rem;
+$label-margin-bottom: .25rem !default;
 
 // forms
 
@@ -145,7 +147,7 @@ $input-margin: 0 0 .75rem 0 !default;
 
 $button-settings: (
   background: $primary-color,
-  border: 1px solid $primary-color,
+  border: 0 solid $primary-color,
   color: #fff,
   border-radius: 0,
   font-size: .9rem,

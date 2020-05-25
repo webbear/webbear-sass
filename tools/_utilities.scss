@@ -1,11 +1,9 @@
 @mixin clearfix() {
-  zoom: 1;
+
   &:after {
-    content: ".";
-    display: block;
-    height: 0;
+    content: "";
+    display: table;
     clear: both;
-    visibility: hidden;
   }
 }
 
@@ -93,7 +91,7 @@
 
 
 
-@mixin w-button($background-color: map-get($button-settings, background), $color: map-get($button-settings, color), $border: map-get($button-settings,button-border), $background-color-hover: map-get($button-settings, hover-background), $color-hover: map-get($button-settings, hover-color), $border-color-hover: map-get($button-settings, hover-border-color)) {
+@mixin w-button($background-color: map-get($button-settings, background), $color: map-get($button-settings, color), $border: map-get($button-settings,border), $background-color-hover: map-get($button-settings, hover-background), $color-hover: map-get($button-settings, hover-color), $border-color-hover: map-get($button-settings, hover-border-color)) {
 
   background-color: $background-color;
   border: $border;
@@ -134,7 +132,7 @@
 }
 
 @mixin w-button-default() {
-  @include w-button(transparent, $secondary-color, 1px solid $secondary-color, transparent, $black, $black);
+  @include w-button(transparent, $secondary-color, 0 solid $secondary-color, transparent, $black, $black);
 }
 
 @mixin w-button-primary() {
@@ -142,7 +140,7 @@
 }
 
 @mixin w-button-secondary() {
-  @include w-button($secondary-color, $white, 1px solid $secondary-color, darken($secondary-color, 10%), $white, darken($secondary-color, 10%));
+  @include w-button($secondary-color, $white, 0 solid $secondary-color, darken($secondary-color, 10%), $white, darken($secondary-color, 10%));
 }
 
 @mixin w-text-input() {
