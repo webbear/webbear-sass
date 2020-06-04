@@ -1,17 +1,24 @@
 @mixin container( $max-width: $container-max-width,
                   $padding: 0 $grid-gutter,
-                  $margin: 0 auto
+                  $margin: 0 auto,
+                  $padding-large: 0 $grid-gutter-large
                   ) {
   max-width: $max-width;
   margin: $margin;
   padding: $padding;
+  @include media(x-large) {
+    padding: $padding-large;
+  }
 }
 
 
-@mixin container-fluid ($padding: 0 $grid-gutter, $margin: 0 auto) {
+@mixin container-fluid ($padding: 0 $grid-gutter, $margin: 0 auto, $padding-large: 0 $grid-gutter-large) {
   margin: $margin;
   padding: $padding;
   clear: both;
+  @include media(x-large) {
+    padding: $padding-large;
+  }
 }
 
 // prepare for flexbox
@@ -50,10 +57,13 @@
 
 
 // new mixin naming
-@mixin columns($margin: 0 (- $grid-gutter / 2), $flex-flow: row wrap ) {
+@mixin columns($margin: 0 (- $grid-gutter / 2), $flex-flow: row wrap , $margin-large: 0 (- $grid-gutter-large / 2) ) {
   display: flex;
   flex-flow: $flex-flow;
   margin:$margin;
+  @include media(x-large) {
+    margin:$margin-large;
+  }
 }
 
 @mixin column($col: $grid-columns, $columns: $grid-columns) {
@@ -65,6 +75,10 @@
   padding-left: $grid-gutter / 2;
   flex: 0 0 $width;
   max-width: $width;
+  @include media(x-large) {
+    padding-right: $grid-gutter-large / 2;
+  padding-left: $grid-gutter-large / 2;
+  }
 }
 
 @mixin gallery($margin: 0 (- $gallery-gutter)) {
