@@ -1,0 +1,33 @@
+$media-itembackground-color: rgba($gray-600, 0.5) !default;
+
+.#{$prefix}-embed {
+
+  position: relative;
+
+  &:before {
+    content: "";
+    display: inline-block;
+  }
+  &.#{$prefix}-embed-16x9:before {
+    padding-bottom: percentage(9/16);
+  }
+  &.#{$prefix}-embed-4x3:before {
+    padding-bottom: percentage(3/4);
+  }
+
+	.#{$prefix}-embeded-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:$media-itembackground-color;
+		//box-shadow: 0 0 4px rgba(#fff, 0.4);
+	}
+}
+
+.#{$prefix}-media {
+  margin:  $grid-gutter*0.75 0;
+  .#{$prefix}-title {
+		display: block;
+		padding: 0 0 6px 0;
+	}
+}

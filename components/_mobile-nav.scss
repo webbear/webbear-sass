@@ -1,0 +1,139 @@
+
+$mobile-nav-background-color: $primary-color !default;
+$mobile-nav-color: $white !default;
+$mobile-nav-background-color-current: darken($mobile-nav-background-color, 5%) !default;
+$mobile-header-background-color: $mobile-nav-background-color !default;
+
+$mobile-menu-border: 1px solid $white !default;
+
+$mobile-icon-color: $white !default;
+$mobile-menu-icon: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" height="24" vie#{$prefix}ox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="#{$mobile-icon-color}" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>') !default;
+
+$mobile-menu-icon-close: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" height="24" vie#{$prefix}ox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="#{$mobile-icon-color}" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>') !default;
+
+$mobile-menu-reveal-icon: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" height="24" vie#{$prefix}ox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="#{$mobile-icon-color}" /></svg>') !default;
+
+$mobile-menu-reveal-icon-close: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" height="24" vie#{$prefix}ox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 13H5v-2h14v2z" fill="#{$mobile-icon-color}" /></svg>') !default;
+
+
+.#{$prefix}-mobile-nav {
+  display: block;
+  background-color: $mobile-nav-background-color;
+  a {
+    display: block;
+    color: $mobile-nav-color;
+  }
+
+  height: 0;
+  overflow: hidden;
+  z-index: 2000;
+  position: absolute;
+  top: 55px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 800ms ease;
+
+  &.#{$prefix}-show {
+    height: auto;
+    opacity: 1;
+    border-top: $mobile-menu-border;
+  }
+
+  ul {
+    padding: 0;
+    li {
+      border-bottom: $mobile-menu-border;
+      &.#{$prefix}-mm-parent {
+        ul {
+          border-top: $mobile-menu-border;
+          li:last-child {
+            border-bottom: 0 none;
+          }
+        }
+
+      }
+      a {
+        text-decoration: none;
+
+      }
+      &.#{$prefix}-mm-current {
+        > a {
+          background-color: $mobile-nav-background-color-current;
+        }
+      }
+      a {
+        line-height: 49px;
+        padding: 0 10px;
+      }
+      li a {
+        padding-left: 30px;
+      }
+      li li a {
+        padding-left: 50px;
+      }
+    }
+  }
+}
+
+.#{$prefix}-mobile-header {
+  background-color: $mobile-header-background-color;
+  padding-right: 10px;
+  padding-left: 10px;
+  line-height: 55px;
+  .#{$prefix}-menu-icon {
+    height: 48px;
+    display: inline-block;
+    vertical-align: middle;
+    @include wb-icon($mobile-menu-icon, 48px, 48px);
+  }
+  .#{$prefix}-reveal-mobile-menu.#{$prefix}-on .#{$prefix}-menu-icon {
+
+    @include wb-icon($mobile-menu-icon-close);
+
+  }
+}
+
+.#{$prefix}-nav.#{$prefix}-reveal {
+  li.#{$prefix}-mm-parent {
+    position: relative;
+    > a {
+      width: calc(100% - 48px)
+    }
+    > .#{$prefix}-reveal-menu-icon {
+      cursor: pointer;
+      display: inline-block;
+      @include wb-icon($mobile-menu-reveal-icon, 48px, 48px);
+      &:before {
+        background-size: 80%;
+      }
+      position: absolute;
+      z-index: 200;
+      right:0;
+      top: 0;
+      &.#{$prefix}-on {
+        @include wb-icon($mobile-menu-reveal-icon-close, 48px, 48px);
+        &:before {
+          background-size: 80%;
+        }
+      }
+    }
+
+    > ul {
+      height: 0;
+      overflow: hidden;
+      border-top-width: 0;
+      opacity: 0;
+      transition: opacity 500ms ease;
+    }
+    &.#{$prefix}-show > ul {
+      border-top-width: 1px;
+      height: auto;
+      margin-top: 0;
+      opacity: 1;
+    }
+
+
+  }
+}

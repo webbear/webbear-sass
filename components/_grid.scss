@@ -1,0 +1,96 @@
+.#{$prefix}-container {
+  @include container;
+}
+
+.#{$prefix}-row {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.#{$prefix}-col {
+  padding: 0;
+  margin: 0;
+}
+
+.#{$prefix}-row {
+  @include columns;
+}
+
+.#{$prefix}-col {
+  @include prepare-column;
+  @include make-column(100%);
+
+  @include media(xsmall) {
+    $i: 1;
+
+    @while $i <=$grid-columns {
+      $perc: unquote((100 / ($grid-columns / $i)) + "%");
+
+      &.#{$prefix}-xsmall-#{$i} {
+        @include make-column($perc);
+      }
+
+      $i: $i+1;
+    }
+  }
+
+
+  @include media(small) {
+    $i: 1;
+
+    @while $i <=$grid-columns {
+      $perc: unquote((100 / ($grid-columns / $i)) + "%");
+
+      &.#{$prefix}-small-#{$i} {
+        @include make-column($perc);
+      }
+
+      $i: $i+1;
+    }
+  }
+
+  @include media(medium) {
+    $i: 1;
+
+    @while $i <=$grid-columns {
+      $perc: unquote((100 / ($grid-columns / $i)) + "%");
+
+      &.#{$prefix}-medium-#{$i} {
+        @include make-column($perc);
+      }
+
+      $i: $i+1;
+    }
+  }
+
+  @include media(large) {
+    $i: 1;
+
+    @while $i <=$grid-columns {
+      $perc: unquote((100 / ($grid-columns / $i)) + "%");
+
+      &.#{$prefix}-large-#{$i} {
+        @include make-column($perc);
+      }
+
+      $i: $i+1;
+    }
+  }
+
+  @include media(xlarge) {
+    $i: 1;
+
+    @while $i <=$grid-columns {
+      $perc: unquote((100 / ($grid-columns / $i)) + "%");
+
+      &.#{$prefix}-xlarge-#{$i} {
+        @include make-column($perc);
+      }
+
+      $i: $i+1;
+    }
+  }
+
+
+}

@@ -8,16 +8,22 @@ $grid-gutter: 32px !default;
 $grid-gutter-large: 48px !default;
 $grid-columns: 12 !default;
 $container-max-width: 1152px !default;
+$container-default-width: 90% !default;
+$container-small-width: 90% !default;
+$container-medium-width: 85% !default;
+$container-large-width: 85% !default;
+$container-xlarge-width: 82% !default;
 $gallery-gutter: $grid-gutter/8 !default;
 $body-margin: 0 !default;
 
 
+
 $breakpoints: (
-  x-small: 0,
+  xsmall: 0,
   small: 576px,
   medium: 768px,
   large: 992px,
-  x-large: 1200px
+  xlarge: 1200px
 ) !default;
 
 /////////////////////////////////////////////////////
@@ -55,7 +61,7 @@ $pink:    #e83e8c !default;
 $red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
-$green:   #28a745 !default;
+$green:   #00cf6e !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
@@ -111,8 +117,8 @@ $body-color: $gray-900 !default;
 $body-bg: $white !default;
 
 //font sizes
-$h1-font-size: 2rem !default;
-$h2-font-size: 1.8rem !default;
+$h1-font-size: 2.8rem !default;
+$h2-font-size: 2rem !default;
 $h3-font-size: 1.65rem !default;
 $h4-font-size: 1.4rem !default;
 $h5-font-size: 1.25rem !default;
@@ -234,3 +240,4 @@ $fa-icons: (
 
 $processwire-defaults: false !default;
 $prefixed-class-set: false !default;
+$prefix: "wb" !default;

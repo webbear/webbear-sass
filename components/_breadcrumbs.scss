@@ -1,0 +1,52 @@
+
+$breadcumb-color: $link-color !default;
+$breadcumb-color-hover: $breadcumb-color !default;
+$breadcrumb-text-decoration: none !default;
+$breadcrumb-text-decoration-hover: none !default;
+$breadcumb-color-current: $breadcumb-color !default;
+$breadcumb-background-color: transparent !default;
+$breadcrumb-margin: .5rem 0 !default;
+$breadcrumb-icon: "/" !default;
+$breadcrumb-icon-color: $breadcumb-color !default;
+$breadcrumb-icon-margin: 0 .75rem !default;
+$breadcrumb-line-height: 1.1 !default;
+.wb-breadcrumb-nav {
+  background-color: $breadcumb-background-color;
+  line-height: $breadcrumb-line-height;
+  .wb-breadcrumb {
+    display: inline-block;
+    margin: $breadcrumb-margin;
+    vertical-align: middle;
+    color: $breadcumb-color-current;
+    a {
+      color: $breadcumb-color;
+      text-decoration: $breadcrumb-text-decoration;
+      transition: all 300ms ease;
+    }
+    a:hover {
+      text-decoration: $breadcrumb-text-decoration-hover;
+      color: $breadcumb-color-hover;
+    }
+    a:visited,
+    a:active {
+      color:$breadcumb-color;
+      text-decoration: $breadcrumb-text-decoration;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:after {
+      content: $breadcrumb-icon;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: $breadcrumb-line-height;
+      color: $breadcrumb-icon-color;
+      margin: $breadcrumb-icon-margin;
+    }
+    &:last-child:after {
+      content: "";
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+
+$arrow-up-icon-fill: none !default;
+$arrow-up-icon-stroke: $white !default;
+$arrow-up-icon: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" height="24" vie#{$prefix}ox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="#{$arrow-up-icon-fill}"/><path fill="#{$arrow-up-icon-stroke}" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"/></svg>');
+$scroll-top-bg-color: $primary-color !default;
+$scroll-top-right: 0 !default;
+$scroll-top-bottom-small: 70px !default;
+$scroll-top-bottom-large: 110px !default;
+$scroll-top-width: 48px !default;
+$scroll-top-height: $scroll-top-width !default;
+$scroll-top-box-shadow: 0 0 0 transparent !default;
+$scroll-top-border: 0 none transparent !default;
+$scroll-top-border-radius: 0 !default;
+
+
+.#{$prefix}-scroll-top {
+	width: $scroll-top-width;
+	height: $scroll-top-height;
+	border: $scroll-top-border;
+	background-color: $scroll-top-bg-color;
+	box-shadow: $scroll-top-box-shadow;
+	background-image: $arrow-up-icon;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: 80%;
+	position: fixed;
+	right: $scroll-top-right;
+	bottom: $scroll-top-bottom-small;
+	display: inline-block;
+	border-radius: $scroll-top-border-radius;
+	appearance: none;
+	outline: 0 none;
+	@include media(medium) {
+		bottom: $scroll-top-bottom-large;
+	}
+
+	z-index: 1200;
+	opacity: 0;
+	transition: opacity 300ms ease;
+	&.#{$prefix}-show {
+		cursor: pointer;
+		opacity: 0.8;
+		&:hover {
+			opacity: 1;
+			outline: 0 none;
+		}
+	}
+}

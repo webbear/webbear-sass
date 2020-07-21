@@ -72,3 +72,28 @@ img {
 	max-width: 100%;
 	height: auto
 }
+
+.primary-background {
+  background-color: $primary-color;
+}
+
+.secondary-background {
+  background-color: $secondary-color;
+}
+
+.primary-color {
+  color: $primary-color;
+}
+
+.secondary-color {
+  color: $secondary-color;
+}
+.sr-only,
+.visually-hidden {
+  @include sr-only();
+}
+
+.#{$prefix}-clear-after,
+.clear-after {
+  @include clearfix;
+}
