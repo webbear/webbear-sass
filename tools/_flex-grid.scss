@@ -1,12 +1,27 @@
-@mixin container( $max-width: $container-max-width,
-                  $padding: 0 $grid-gutter,
-                  $margin: 0 auto,
-                  $padding-large: 0 $grid-gutter-large
-                  ) {
+@mixin container($max-width: $container-max-width,
+  $padding: 0 $grid-gutter,
+  $margin: 0 auto,
+  $padding-large: 0) {
   max-width: $max-width;
   margin: $margin;
   padding: $padding;
-  @include media(x-large) {
+  width: $container-default-width;
+
+  @include media(small) {
+    width: $container-small-width;
+  }
+
+  @include media(medium) {
+    width: $container-medium-width;
+  }
+
+  @include media(large) {
+    width: $container-large-width;
+
+  }
+
+  @include media(xlarge) {
+    width: $container-xlarge-width;
     padding: $padding-large;
   }
 }
@@ -16,68 +31,80 @@
   margin: $margin;
   padding: $padding;
   clear: both;
+
   @include media(x-large) {
     padding: $padding-large;
   }
 }
 
-// prepare for flexbox
-@mixin flex-parent($margin: 0 (- $grid-gutter / 2), $flex-flow: row wrap) {
-  display: flex;
-  flex-flow: $flex-flow;
-  margin:$margin;
+// // prepare for flexbox
+// @mixin flex-parent($margin: 0 (- $grid-gutter / 2), $flex-flow: row wrap) {
+//   display: flex;
+//   flex-flow: $flex-flow;
+//   margin:$margin;
 
-}
+// }
 
-@mixin flex-item($flex: 0 1 auto) {
-  padding-right: $grid-gutter / 2;
-  padding-left: $grid-gutter / 2;
-  flex: $flex;
-}
+// @mixin flex-item($flex: 0 1 auto) {
+//   padding-right: $grid-gutter / 2;
+//   padding-left: $grid-gutter / 2;
+//   flex: $flex;
+// }
 
-@mixin flex-gallery-parent() {
-  display: flex;
-  flex-flow: row wrap;
-  margin-left: - $grid-gutter / 2;
-  margin-right: - $grid-gutter / 2;
-}
+// @mixin flex-gallery-parent() {
+//   display: flex;
+//   flex-flow: row wrap;
+//   margin-left: - $grid-gutter / 2;
+//   margin-right: - $grid-gutter / 2;
+// }
 
-@mixin flex-gallery-item() {
-  padding: $grid-gutter / 2;
-  flex: 0 0 auto;
-}
+// @mixin flex-gallery-item() {
+//   padding: $grid-gutter / 2;
+//   flex: 0 0 auto;
+// }
 
-@mixin flex-item-width($value: $grid-columns, $columns: $grid-columns) {
-  @if($value <= $columns) {
-    width: percentage($value / $columns);
-  } @else {
-    width: 100%;
-  }
-}
+// @mixin flex-item-width($value: $grid-columns, $columns: $grid-columns) {
+//   @if($value <= $columns) {
+//     width: percentage($value / $columns);
+//   } @else {
+//     width: 100%;
+//   }
+// }
 
 
 // new mixin naming
-@mixin columns($margin: 0 (- $grid-gutter / 2), $flex-flow: row wrap , $margin-large: 0 (- $grid-gutter-large / 2) ) {
+@mixin columns($margin: 0 (- $grid-gutter / 2), $flex-flow: row wrap, $margin-large: 0 (- $grid-gutter-large / 2)) {
   display: flex;
   flex-flow: $flex-flow;
-  margin:$margin;
-  @include media(x-large) {
-    margin:$margin-large;
+  margin: $margin;
+
+  @include media(xlarge) {
+    margin: $margin-large;
   }
+}
+
+@mixin prepare-column() {
+  padding-right: $grid-gutter / 2;
+  padding-left: $grid-gutter / 2;
+
+  @include media(xlarge) {
+    padding-right: $grid-gutter-large / 2;
+    padding-left: $grid-gutter-large / 2;
+  }
+}
+
+@mixin make-column($width) {
+  flex: 0 0 $width;
+  max-width: $width;
 }
 
 @mixin column($col: $grid-columns, $columns: $grid-columns) {
   $width: 100%;
-  @if($col <= $columns) {
+
+  @if($col <=$columns) {
     $width: percentage($col / $columns);
-  }
-  padding-right: $grid-gutter / 2;
-  padding-left: $grid-gutter / 2;
-  flex: 0 0 $width;
-  max-width: $width;
-  @include media(x-large) {
-    padding-right: $grid-gutter-large / 2;
-  padding-left: $grid-gutter-large / 2;
+
+    @include make-column($width);
   }
 }
 
@@ -89,9 +116,11 @@
 
 @mixin gallery-column($col: $grid-columns, $padding: $gallery-gutter, $columns: $grid-columns) {
   $width: 100%;
-  @if($col <= $columns) {
+
+  @if($col <=$columns) {
     $width: percentage($col / $columns);
   }
+
   padding: $padding;
   flex: 0 0 $width;
   max-width: $width;

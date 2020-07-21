@@ -41,6 +41,19 @@
   }
 }
 
+@mixin wb-icon ($icon, $icon-width: 40px, $icon-height: 40px) {
+  &:before {
+    content: "";
+    display: inline-block;
+    width: $icon-width;
+    height: $icon-height;
+    background-image: $icon;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 @mixin bg-color($bg) {
   $val: $bg;
   @if map-has-key($brand-colors, $bg) {
