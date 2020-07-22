@@ -2,3 +2,5 @@
 config.codekit3
 webbear2.sublime-project
 webbear2.sublime-workspace
+/node_modules/
+*.code-workspace

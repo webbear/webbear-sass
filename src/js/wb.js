@@ -3,6 +3,28 @@
     var settings = {
       prefix: "wb"
     };
+    function isTouchDevice() {
+      return ('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+    }
+
+    function navbarDropdowns(params) {
+      var s = $.extend({
+        prefix: settings.prefix
+      }, params);
+      var prefix = s.prefix;
+      if (isTouchDevice()) {
+        // console.log("touch device");
+        $("." + prefix + "-parent").on("click touch", function(e) {
+          // e.preventDefault();
+          $(this).siblings().children("." + prefix + "-dropdown-nav").removeClass(prefix + "-show");
+          $(this).children("." + prefix + "-dropdown-nav").toggleClass(prefix + "-show");
+          if ($(this).children("." + prefix + "-dropdown-nav").hasClass(prefix + "-show")) {
+            e.preventDefault();
+          }
+        });
+      }
+    }
+
     function mobilemenu(params) {
       var s = $.extend({
         prefix: settings.prefix
@@ -64,12 +86,14 @@
       }, params);
       mobilemenu(s);
       scrolltop(s);
+      navbarDropdowns(s);
     }
     return {
       init: init,
       mobilemenu: mobilemenu,
       scrolltop: scrolltop,
-      pwimages: pwImages
+      pwimages: pwImages,
+      navbardropdowns: navbarDropdowns
     };
   })();
 
