@@ -15,12 +15,17 @@
       if (isTouchDevice()) {
         // console.log("touch device");
         $("." + prefix + "-parent").on("click touch", function(e) {
-          // e.preventDefault();
+          e.stopPropagation();
           $(this).siblings().children("." + prefix + "-dropdown-nav").removeClass(prefix + "-show");
           $(this).children("." + prefix + "-dropdown-nav").toggleClass(prefix + "-show");
           if ($(this).children("." + prefix + "-dropdown-nav").hasClass(prefix + "-show")) {
             e.preventDefault();
           }
+        });
+        $("body").not("." + prefix + "-parent").on("click touch", function(e) {
+          $("." + prefix + "-dropdown-nav").removeClass(prefix + "-show");
+          e.preventDefault();
+          e.stopPropagation();
         });
       }
     }
