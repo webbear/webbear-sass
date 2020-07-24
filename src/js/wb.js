@@ -13,7 +13,6 @@
       }, params);
       var prefix = s.prefix;
       if (isTouchDevice()) {
-        // console.log("touch device");
         $("." + prefix + "-parent").on("click touch", function(e) {
           e.stopPropagation();
           $(this).siblings().children("." + prefix + "-dropdown-nav").removeClass(prefix + "-show");
@@ -24,8 +23,6 @@
         });
         $("body").not("." + prefix + "-parent").on("click touch", function(e) {
           $("." + prefix + "-dropdown-nav").removeClass(prefix + "-show");
-          e.preventDefault();
-          e.stopPropagation();
         });
       }
     }
