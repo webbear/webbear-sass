@@ -31,3 +31,12 @@ $media-itembackground-color: rgba($gray-600, 0.5) !default;
 		padding: 0 0 6px 0;
 	}
 }
+
+.#{$prefix}-audio-player {
+  margin: .25rem 0 .5rem 0;
+
+  .#{$prefix}-audio-player-title {
+    display: block;
+    margin-bottom: .25rem;
+  }
+}
