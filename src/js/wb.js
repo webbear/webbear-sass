@@ -1,8 +1,9 @@
-(function($){
+(function($) {
   window.wb = (function() {
     var settings = {
       prefix: "wb"
     };
+
     function isTouchDevice() {
       return ('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
     }
@@ -41,7 +42,7 @@
         e.preventDefault();
       });
 
-      $("." +prefix + "-reveal-menu-icon").each(function() {
+      $("." + prefix + "-reveal-menu-icon").each(function() {
         var button = $(this);
         button.on("click touch", function(e) {
           $(this).toggleClass(prefix + "-on");
@@ -74,6 +75,34 @@
       });
     }
 
+    function audioplayer(params) {
+      var s = $.extend({
+        prefix: settings.prefix
+      }, params);
+
+      var prefix = s.prefix;
+      var audioplayer = $("a." + prefix + "-audio-player");
+
+      if (audioplayer.length) {
+        $.each(audioplayer, function() {
+          var url = $(this).attr("href");
+          var player;
+          var valid = false;
+          if (/\.mp3$/gmi.test(url)) valid = true;
+          if (/\.m4a$/gmi.test(url)) valid = true;
+          if (valid) {
+            player = "<div class='" + prefix + "-audio-player " + prefix + " -embeded-audio-player'>";
+            player += "<span class='" + prefix + "-audio-player-title'>" + $(this).html() + "</span>";
+            player += "<audio controls  class='" + prefix + "embeded-audio'>";
+            player += "<source src='" + url + "' type='audio/mpeg'>";
+            player += "</audio>";
+            player += "</div>";
+            $(this).replaceWith(player);
+          }
+        });
+      }
+    }
+
     function pwImages(params) {
       var s = $.extend({
         prefix: settings.prefix
@@ -95,11 +124,12 @@
       mobilemenu: mobilemenu,
       scrolltop: scrolltop,
       pwimages: pwImages,
-      navbardropdowns: navbarDropdowns
+      navbardropdowns: navbarDropdowns,
+      audioplayer: audioplayer
     };
   })();
 
-  $(function(){
+  $(function() {
 
     window.wb.init();
     window.wb.pwimages()
