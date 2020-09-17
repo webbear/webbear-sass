@@ -40,7 +40,7 @@
     } @else {
       @return $grid-gutter + $val;
     }
-  } @elseif (type-of($val) == string) {
+  } @else if (type-of($val) == string) {
     @return calc(#{$grid-gutter} #{unquote($val)});
   }
 }
