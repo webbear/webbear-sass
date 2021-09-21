@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .#{$prefix}-container {
   @include container;
 }
@@ -25,7 +27,7 @@
     $i: 1;
 
     @while $i <=$grid-columns {
-      $perc: unquote((100 / ($grid-columns / $i)) + "%");
+      $perc: unquote(math.div(100, math.div($grid-columns, $i)) + "%");
 
       &.#{$prefix}-xsmall-#{$i} {
         @include make-column($perc);
@@ -40,7 +42,7 @@
     $i: 1;
 
     @while $i <=$grid-columns {
-      $perc: unquote((100 / ($grid-columns / $i)) + "%");
+      $perc: unquote(math.div(100, math.div($grid-columns, $i)) + "%");
 
       &.#{$prefix}-small-#{$i} {
         @include make-column($perc);
@@ -54,7 +56,7 @@
     $i: 1;
 
     @while $i <=$grid-columns {
-      $perc: unquote((100 / ($grid-columns / $i)) + "%");
+      $perc: unquote(math.div(100, math.div($grid-columns, $i)) + "%");
 
       &.#{$prefix}-medium-#{$i} {
         @include make-column($perc);
@@ -68,7 +70,7 @@
     $i: 1;
 
     @while $i <=$grid-columns {
-      $perc: unquote((100 / ($grid-columns / $i)) + "%");
+      $perc: unquote(math.div(100, math.div($grid-columns, $i)) + "%");
 
       &.#{$prefix}-large-#{$i} {
         @include make-column($perc);
@@ -82,7 +84,7 @@
     $i: 1;
 
     @while $i <=$grid-columns {
-      $perc: unquote((100 / ($grid-columns / $i)) + "%");
+      $perc: unquote(math.div(100, math.div($grid-columns, $i)) + "%");
 
       &.#{$prefix}-xlarge-#{$i} {
         @include make-column($perc);

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @function unicode($str){
 	@return unquote("\"") + $str + unquote("\"");
 }
@@ -7,7 +9,7 @@
 }
 
 @function rem($sizeValue) {
-  @return($sizeValue/ 16) + rem;
+  @return math.div($sizeValue, 16) + rem;
 }
 
 
@@ -49,7 +51,7 @@
   @if ($value == $columns or $value > $columns) {
     @return 100%;
   } @else {
-    @return (100% / $columns * $value);
+    @return (math.div(100%, $columns) * $value);
   }
 }
 
