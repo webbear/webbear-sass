@@ -31,7 +31,7 @@
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.1",
     "sass": "^1.49.7",
-    "terser": "^5.10.0"
+    "terser": "^5.14.2"
   },
   "devDependencies": {
     "gulp-concat": "^2.6.1",
