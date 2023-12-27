@@ -8,7 +8,8 @@
   },
   "scripts": {
     "sass": "sass src/scss/wb.scss --style=expanded --no-source-map dist/css/wb.css",
-    "sass:min": "sass src/scss/wb.scss --style=compressed --no-source-map dist/css/wb.min.css"
+    "sass:min": "sass src/scss/wb.scss --style=compressed --no-source-map dist/css/wb.min.css",
+    "sass:dev": "sass src/scss/wb.scss --style=expanded --no-source-map src/css/wb.css"
   },
   "repository": {
     "type": "git",

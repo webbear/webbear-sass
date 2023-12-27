@@ -4,7 +4,7 @@ $card-background-color: transparent !default;
 $card-border: 1px solid $gray-200 !default;
 $card-border-radius: 0 !default;
 $card-body-padding: 1rem !default;
-.#{$prefix}-card {
+.#{$prefix}card {
   padding: $card-padding $card-padding $card-padding $card-padding;
   box-shadow: $card-box-shadow;
   border: $card-border;
@@ -12,22 +12,22 @@ $card-body-padding: 1rem !default;
   word-wrap: break-word;
   border-radius: $card-border-radius;
 }
-.#{$prefix}-card-image {
+.#{$prefix}card-image {
   margin-top: - $card-padding;
   margin-right: - $card-padding;
   margin-left: - $card-padding;
 }
-.#{$prefix}-card-title {
+.#{$prefix}card-title {
   margin-bottom: .75rem;
 }
 
-.#{$prefix}-card-text {
+.#{$prefix}card-text {
   margin-bottom: .5rem;
   &:last-child {
     margin-bottom: 0;
   }
 }
-.#{$prefix}-card-body {
+.#{$prefix}card-body {
   display: block;
   min-height: 1px;
   padding: $card-body-padding;
