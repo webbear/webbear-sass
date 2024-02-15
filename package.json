@@ -26,17 +26,6 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "autoprefixer": "^10.4.2",
-    "del": "^5.1.0",
-    "fibers": "^5.0.1",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^9.0.1",
-    "sass": "^1.49.7",
-    "terser": "^5.14.2"
-  },
-  "devDependencies": {
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^5.0.0",
-    "node-sass": "^7.0.3"
+    "sass": "^1.49.7"
   }
 }
