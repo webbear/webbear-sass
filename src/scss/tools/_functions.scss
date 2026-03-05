@@ -1,23 +1,28 @@
 @use "sass:math";
 
-@function unicode($str){
-	@return unquote("\"") + $str + unquote("\"");
+@function unicode($str) {
+  @return unquote('"') + $str + unquote('"');
 }
 
-@function unicode2($str){
- @return unquote("\"")+unquote(str-insert($str, "\\", 1))+unquote("\"");
+@function unicode2($str) {
+  @return unquote('"') + unquote(str-insert($str, "\\", 1)) + unquote('"');
 }
 
 @function rem($sizeValue) {
   @return math.div($sizeValue, 16) + rem;
 }
 
+@function pt2rem($sizeValue) {
+  @return math.div(
+      math.round(math.div($sizeValue * 1.3333343412075, 16) * 100),
+      100
+    ) + rem;
+}
 
 // kind of backward compatibility
 @function px2rem($sizeValue) {
   @return rem($sizeValue);
 }
-
 
 @function slice($list, $start: 1, $end: length($list)) {
   @if length($list) < 1 or $start > $end {
@@ -32,7 +37,6 @@
 
   @return $result;
 }
-
 
 // kind of backward compatibility
 @function gutter($val: 1) {
@@ -57,7 +61,7 @@
 
 // kind of backward compatibility
 @function span($value: 1, $columns: $grid-columns) {
-  @return flex-column-width($value,$columns);
+  @return flex-column-width($value, $columns);
 }
 
 // retreive color sass maps
@@ -87,7 +91,12 @@
   $index: str-index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
   }
 
   @return $string;
@@ -95,42 +104,42 @@
 
 // Encode symbols
 @function url-encode($string) {
-    $map: (
-        "%": "%25",
-        "<": "%3C",
-        ">": "%3E",
-        " ": "%20",
-        "!": "%21",
-        "*": "%2A",
-        "'": "%27",
-        '"': "%22",
-        "(": "%28",
-        ")": "%29",
-        ";": "%3B",
-        ":": "%3A",
-        "@": "%40",
-        "&": "%26",
-        "=": "%3D",
-        "+": "%2B",
-        "$": "%24",
-        ",": "%2C",
-        "/": "%2F",
-        "?": "%3F",
-        "#": "%23",
-        "[": "%5B",
-        "]": "%5D"
-    );
+  $map: (
+    "%": "%25",
+    "<": "%3C",
+    ">": "%3E",
+    " ": "%20",
+    "!": "%21",
+    "*": "%2A",
+    "'": "%27",
+    '"': "%22",
+    "(": "%28",
+    ")": "%29",
+    ";": "%3B",
+    ":": "%3A",
+    "@": "%40",
+    "&": "%26",
+    "=": "%3D",
+    "+": "%2B",
+    "$": "%24",
+    ",": "%2C",
+    "/": "%2F",
+    "?": "%3F",
+    "#": "%23",
+    "[": "%5B",
+    "]": "%5D",
+  );
 
-    $new: $string;
+  $new: $string;
 
-    @each $search, $replace in $map {
-        $new: str-replace($new, $search, $replace);
-    }
+  @each $search, $replace in $map {
+    $new: str-replace($new, $search, $replace);
+  }
 
-    @return $new;
+  @return $new;
 }
 
 // Format the SVG as a URL
 @function inline-svg($string) {
-    @return url('data:image/svg+xml,#{url-encode($string)}');
+  @return url("data:image/svg+xml,#{url-encode($string)}");
 }

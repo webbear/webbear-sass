@@ -16,7 +16,7 @@ $mobile-menu-reveal-icon: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" he
 $mobile-menu-reveal-icon-close: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" height="24" vie#{$prefix}ox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 13H5v-2h14v2z" fill="#{$mobile-icon-color}" /></svg>') !default;
 
 
-.#{$prefix}-mobile-nav {
+.#{$prefix}mobile-nav {
   display: block;
   background-color: $mobile-nav-background-color;
   a {
@@ -35,7 +35,7 @@ $mobile-menu-reveal-icon-close: inline-svg('<svg xmlns="http://www.w3.org/2000/s
   opacity: 0;
   transition: opacity 800ms ease;
 
-  &.#{$prefix}-show {
+  &.#{$prefix}show {
     height: auto;
     opacity: 1;
     border-top: $mobile-menu-border;
@@ -45,7 +45,7 @@ $mobile-menu-reveal-icon-close: inline-svg('<svg xmlns="http://www.w3.org/2000/s
     padding: 0;
     li {
       border-bottom: $mobile-menu-border;
-      &.#{$prefix}-mm-parent {
+      &.#{$prefix}mm-parent {
         ul {
           border-top: $mobile-menu-border;
           li:last-child {
@@ -58,7 +58,7 @@ $mobile-menu-reveal-icon-close: inline-svg('<svg xmlns="http://www.w3.org/2000/s
         text-decoration: none;
 
       }
-      &.#{$prefix}-mm-current {
+      &.#{$prefix}mm-current {
         > a {
           background-color: $mobile-nav-background-color-current;
         }
@@ -77,31 +77,31 @@ $mobile-menu-reveal-icon-close: inline-svg('<svg xmlns="http://www.w3.org/2000/s
   }
 }
 
-.#{$prefix}-mobile-header {
+.#{$prefix}mobile-header {
   background-color: $mobile-header-background-color;
   padding-right: 10px;
   padding-left: 10px;
   line-height: 55px;
-  .#{$prefix}-menu-icon {
+  .#{$prefix}menu-icon {
     height: 48px;
     display: inline-block;
     vertical-align: middle;
     @include wb-icon($mobile-menu-icon, 48px, 48px);
   }
-  .#{$prefix}-reveal-mobile-menu.#{$prefix}-on .#{$prefix}-menu-icon {
+  .#{$prefix}reveal-mobile-menu.#{$prefix}on .#{$prefix}menu-icon {
 
     @include wb-icon($mobile-menu-icon-close);
 
   }
 }
 
-.#{$prefix}-nav.#{$prefix}-reveal {
-  li.#{$prefix}-mm-parent {
+.#{$prefix}nav.#{$prefix}reveal {
+  li.#{$prefix}mm-parent {
     position: relative;
     > a {
       width: calc(100% - 48px)
     }
-    > .#{$prefix}-reveal-menu-icon {
+    > .#{$prefix}reveal-menu-icon {
       cursor: pointer;
       display: inline-block;
       @include wb-icon($mobile-menu-reveal-icon, 48px, 48px);
@@ -112,7 +112,7 @@ $mobile-menu-reveal-icon-close: inline-svg('<svg xmlns="http://www.w3.org/2000/s
       z-index: 200;
       right:0;
       top: 0;
-      &.#{$prefix}-on {
+      &.#{$prefix}on {
         @include wb-icon($mobile-menu-reveal-icon-close, 48px, 48px);
         &:before {
           background-size: 80%;
@@ -127,7 +127,7 @@ $mobile-menu-reveal-icon-close: inline-svg('<svg xmlns="http://www.w3.org/2000/s
       opacity: 0;
       transition: opacity 500ms ease;
     }
-    &.#{$prefix}-show > ul {
+    &.#{$prefix}show > ul {
       border-top-width: 1px;
       height: auto;
       margin-top: 0;

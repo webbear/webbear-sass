@@ -93,7 +93,7 @@ img {
   @include sr-only();
 }
 
-.#{$prefix}-clear-after,
+.#{$prefix}clear-after,
 .clear-after {
   @include clearfix;
 }

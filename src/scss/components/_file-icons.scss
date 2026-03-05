@@ -33,43 +33,43 @@ $icon-video-file: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0
   vertical-align: $vertical-align;
 }
 
-.#{$prefix}-icon-pdf {
+.#{$prefix}icon-pdf {
   &:before {
     @include insert-icon($icon-pdf);
   }
 }
 
-.#{$prefix}-icon-word {
+.#{$prefix}icon-word {
   &:before {
     @include insert-icon($icon-word);
   }
 }
 
-.#{$prefix}-icon-excel {
+.#{$prefix}icon-excel {
   &:before {
     @include insert-icon($icon-excel);
   }
 }
 
-.#{$prefix}-icon-image {
+.#{$prefix}icon-image {
   &:before {
     @include insert-icon($icon-image);
   }
 }
 
-.#{$prefix}-icon-audio {
+.#{$prefix}icon-audio {
   &:before {
     @include insert-icon($icon-audio-file);
   }
 }
 
-.#{$prefix}-icon-video {
+.#{$prefix}icon-video {
   &:before {
     @include insert-icon($icon-video-file);
   }
 }
 
-.#{$prefix}-icon-external-link {
+.#{$prefix}icon-external-link {
   &:after {
     @include insert-icon($icon-external-link, 0 0 0 6px);
   }
